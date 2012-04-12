@@ -6,35 +6,39 @@ package com.github.nhojpatrick.lang;
 import org.apache.log4j.Logger;
 
 /**
- * The <code>Trinary</code> enum is a strongly typed alternative to; true, false and null.
+ * The <code>Trinary</code> enum is a strongly typed alternative to; true, false
+ * and null.
  * 
  * @author john
- * @todo [IMPL] Trinary String's are lowercase, but valueOf(String) only works with uppercase by default, i.e. the enum
- *       variable name. Determine how this should be resolved.
+ * @todo [IMPL] Trinary String's are lowercase, but valueOf(String) only works
+ *       with uppercase by default, i.e. the enum variable name. Determine how
+ *       this should be resolved.
  */
 public enum Trinary {
 
     /**
      * Trinary FALSE.
      */
-    FALSE('F', "false"),
+    FALSE('F'),
 
     /**
      * Trinary TRUE.
      */
-    TRUE('T', "true"),
+    TRUE('T'),
 
     /**
      * Trinary UNKNOWN.
      */
-    UNKNOWN('U', "unknown");
+    UNKNOWN('U');
 
     /**
-     * Returns the Trinary enum constant that represents the supplied pBoolean. Supplying null will return UNKNOWN,
-     * Boolean.TRUE will return TRUE and Boolean.FALSE will return FALSE.
+     * Returns the Trinary enum constant that represents the supplied pBoolean.
+     * Supplying null will return UNKNOWN, Boolean.TRUE will return TRUE and
+     * Boolean.FALSE will return FALSE.
      * 
      * @param pBoolean
-     *            the Boolean that needs to be resolved to its Trinary enum representation.
+     *            the Boolean that needs to be resolved to its Trinary enum
+     *            representation.
      * @return the Trinary that represents the supplied pBoolean.
      */
     public static Trinary valueOf(final Boolean pBoolean) {
@@ -61,11 +65,13 @@ public enum Trinary {
     }
 
     /**
-     * Returns the Trinary enum constant that represents the supplied pChar. The value 'U' will return UNKNOWN, 'T' will
-     * return TRUE and 'F' will return FALSE;
+     * Returns the Trinary enum constant that represents the supplied pChar. The
+     * value 'U' will return UNKNOWN, 'T' will return TRUE and 'F' will return
+     * FALSE;
      * 
      * @param pChar
-     *            the char that needs to be resolved to its Trinary enum representation.
+     *            the char that needs to be resolved to its Trinary enum
+     *            representation.
      * @return the Trinary that represents the supplied pChar.
      */
     public static Trinary valueOf(final char pChar) {
@@ -98,24 +104,19 @@ public enum Trinary {
 
     private final char trinaryChar;
 
-    private final String trinaryString;
-
     /**
      * Constructor Trinary enum with its representations.
      * 
      * @param pTrinaryChar
      *            the Trinary enum's representation as a char.
-     * @param pTrinaryString
-     *            the Trinary enum's representation as a String.
      */
-    private Trinary(final char pTrinaryChar, final String pTrinaryString) {
+    private Trinary(final char pTrinaryChar) {
 
         final Logger LOG = Logger.getLogger(Trinary.class);
 
-        LOG.debug("ENTRY[TrinaryChar=" + pTrinaryChar + ";TrinaryString=" + pTrinaryString + "]");
+        LOG.debug("ENTRY[TrinaryChar=" + pTrinaryChar + "]");
 
         this.trinaryChar = pTrinaryChar;
-        this.trinaryString = pTrinaryString;
     }
 
     /**
@@ -126,16 +127,6 @@ public enum Trinary {
     public char getAsChar() {
 
         return this.trinaryChar;
-    }
-
-    /**
-     * Get the Trinary enum as a String.
-     * 
-     * @return the Trinary enum represented as a String.
-     */
-    public String getAsString() {
-
-        return this.trinaryString;
     }
 
 }

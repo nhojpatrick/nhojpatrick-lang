@@ -116,30 +116,6 @@ public class TrinaryTest {
     }
 
     @Test
-    public void trinary_getAsString_FALSE() {
-
-        final Trinary trinary = Trinary.FALSE;
-        assertNotNull("Trinary should not be null", trinary);
-        assertEquals("Unexpected Trunary.getAsString()", "false", trinary.getAsString());
-    }
-
-    @Test
-    public void trinary_getAsString_TRUE() {
-
-        final Trinary trinary = Trinary.TRUE;
-        assertNotNull("Trinary should not be null", trinary);
-        assertEquals("Unexpected Trunary.getAsString()", "true", trinary.getAsString());
-    }
-
-    @Test
-    public void trinary_getAsString_UNKNOWN() {
-
-        final Trinary trinary = Trinary.UNKNOWN;
-        assertNotNull("Trinary should not be null", trinary);
-        assertEquals("Unexpected Trunary.getAsString()", "unknown", trinary.getAsString());
-    }
-
-    @Test
     public void trinary_hashCode_FALSE_FALSE() {
 
         final Trinary trinary = Trinary.FALSE;
