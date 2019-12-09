@@ -16,7 +16,8 @@
  */
 package com.github.nhojpatrick.lang;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The <code>Trinary</code> enum is a strongly typed alternative to; true, false
@@ -44,6 +45,8 @@ public enum Trinary {
      */
     UNKNOWN('U');
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Trinary.class);
+
     /**
      * Returns the Trinary enum constant that represents the supplied pBoolean.
      * Supplying null will return UNKNOWN, Boolean.TRUE will return TRUE and
@@ -56,9 +59,7 @@ public enum Trinary {
      */
     public static Trinary valueOf(final Boolean pBoolean) {
 
-        final Logger log = Logger.getLogger(Trinary.class);
-
-        log.debug("ENTRY[valueOf=Boolean;Boolean=" + pBoolean + "]");
+        LOGGER.debug("ENTRY[valueOf=Boolean;Boolean=" + pBoolean + "]");
 
         final Trinary trinary;
         if (pBoolean == null) {
@@ -72,7 +73,7 @@ public enum Trinary {
             trinary = FALSE;
         }
 
-        log.debug("EXIT[valueOf=Boolean;Trinary=" + trinary + "]");
+        LOGGER.debug("EXIT[valueOf=Boolean;Trinary=" + trinary + "]");
 
         return trinary;
     }
@@ -89,9 +90,7 @@ public enum Trinary {
      */
     public static Trinary valueOf(final char pChar) {
 
-        final Logger log = Logger.getLogger(Trinary.class);
-
-        log.debug("ENTRY[valueOf=char;char=" + pChar + "]");
+        LOGGER.debug("ENTRY[valueOf=char;char=" + pChar + "]");
 
         final Trinary trinary;
         if ('U' == pChar) {
@@ -106,11 +105,11 @@ public enum Trinary {
         } else {
             final IllegalArgumentException e = new IllegalArgumentException(
                     "TODO [NHOJ-LANG-000001] No Trinary enum constant for '" + pChar + "'.");
-            log.error("TODO [NHOJ-LANG-000001]", e);
+            LOGGER.error("TODO [NHOJ-LANG-000001]", e);
             throw e;
         }
 
-        log.debug("EXIT[valueOf=char;Trinary=" + trinary + "]");
+        LOGGER.debug("EXIT[valueOf=char;Trinary=" + trinary + "]");
 
         return trinary;
     }
@@ -128,9 +127,9 @@ public enum Trinary {
      */
     Trinary(final char pTrinaryChar) {
 
-        final Logger log = Logger.getLogger(Trinary.class);
+        final Logger LOGGER = LoggerFactory.getLogger(Trinary.class);
 
-        log.debug("ENTRY[TrinaryChar=" + pTrinaryChar + "]");
+        LOGGER.debug("ENTRY[TrinaryChar=" + pTrinaryChar + "]");
 
         this.trinaryChar = pTrinaryChar;
     }
