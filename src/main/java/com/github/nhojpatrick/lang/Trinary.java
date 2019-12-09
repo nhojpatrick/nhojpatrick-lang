@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  * and null.
  *
  * @author nhojpatrick
- * @todo [IMPL] Trinary String's are lowercase, but valueOf(String) only works
+ * @nhojpatrick.todo [IMPL] Trinary String's are lowercase, but valueOf(String) only works
  *       with uppercase by default, i.e. the enum variable name. Determine how
  *       this should be resolved.
  */
