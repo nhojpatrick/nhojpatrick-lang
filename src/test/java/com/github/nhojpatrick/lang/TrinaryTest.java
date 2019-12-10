@@ -425,7 +425,7 @@ public class TrinaryTest {
 
         assertThat("Trinary.values() should not return null", trinaries, is(notNullValue()));
 
-        final Set<String> entries = new TreeSet<String>();
+        final Set<String> entries = new TreeSet<>();
         for (final Trinary trinary : trinaries) {
             final String trinaryName = trinary.name();
             entries.add(trinaryName);
@@ -440,7 +440,7 @@ public class TrinaryTest {
 
         assertThat("Trinary.values() should not return null", trinaries, is(notNullValue()));
 
-        final Set<String> entries = new TreeSet<String>();
+        final Set<String> entries = new TreeSet<>();
         for (final Trinary trinary : trinaries) {
             final String trinaryName = trinary.toString();
             entries.add(trinaryName);
